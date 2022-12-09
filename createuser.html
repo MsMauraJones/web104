@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gear Up </title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="creatuser.js" defer></script>
+    <!-- defer will ensure the html is fully rendered before running the script -->
+</head>
+<body>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <main>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Welcome to Gear Up</h1>
+            </div>
+        </div>
+        <div id="createUserForm">
+            <form name ="FM">
+                <div class="form-group">
+                    <label for="newUName">Name</label>
+                    <input class="form-control" type="text" id="newUName" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="newEmailLogin">Email</label>
+                    <input class="form-control" type="text" id="newEmailLogin" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">Password</label>
+                    <input class="form-control" type="text" id="newPassword" placeholder="Enter your new password">
+                </div>
+                <div id="makeCategoryList">
+                    <label for="makeCategory">Select some categories for your gear. You can add more later if needed.</label>
+                    <div class="form-check">
+                        <input type="checkbox" name="Beach" value="Beach" class="form-check-input" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">Beach Gear</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="Camping" value="Camping"class="form-check-input" id="defaultCheck2">
+                        <label class="form-check-label" for="defaultCheck2">Camping</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="Fishing" value="Fishing" class="form-check-input" for="defaultCheck3">
+                        <label class="form-check-label" for="defaultCheck3">Fishing</label>
+                    </div>
+                    <div class="form-check">    
+                        <input type="checkbox" name="Hockey" value="Hockey" class="form-check-input" id="defaultCheck4">
+                        <label class="form-check-label" for="defaultCheck4">Hockey</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="Skating" value="Skating" class="form-check-input" id="defaultCheck5">
+                        <label class="form-check-label" for="defaultCheck5">Skating</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="Cross-Country Skiing" value="Cross-Country Skiing" class="form-check-input" id="defaultCheck6">
+                        <label class="form-check-label" for="defaultCheck6">Skiing - Downhill</label>
+                    </div>
+                <button class="btn btn-primary" type="submit" id="newRegister">Register</button>
+            </form>
+        </div> 
+        <div id="mainPageRedirect" style="display:none;">
+            <p>You are registered! Let's get started on making your gear inventory.</p>
+            <button class="btn btn-dark" type="button" onclick="goToMainPage()">Enter</button>
+        </div>
+    </main>
+</body>
+</html>

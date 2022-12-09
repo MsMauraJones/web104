@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="mainpage.js" defer></script>
+    <!-- defer will ensure the html is fully rendered before running the script -->
+</head>
+<body>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <main>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4"><span id="userName">User</span>'s Inventory</h1>
+            </div>
+        </div>
+
+        <div id="addToInventoryDiv">
+            <h3>Add to Inventory</h3>
+            <form id="addToInventoryForm">
+                <div class="form-group">
+                    <label for="gearCategory">Gear Category:</label>
+                    <select class="form-control" name="gearCategory" id="gearCategoryB">
+                        <option disabled selected value>Select a Gear Category to enter</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="gearType">Gear type:</label>
+                    <input class="form-control" id="newGearType" type="text" placeholder="E.g. helmet">
+                </div>
+                <div class="form-group">
+                    <label for="gearSize">Gear size:</label>
+                    <input class="form-control" id="newGearSize" type="text" placeholder="E.g. youth small">
+                </div>
+                <div class="form-group">
+                    <label for="gearLoc">Gear location:</label>
+                    <input class="form-control" id="newGearLoc" type="text" placeholder="E.g. storage bin 4">
+                </div>
+                <div class="form-group">
+                    <label for="gearFam">Gear user:</label>
+                    <input class="form-control" id="newGearFam" type="text" placeholder="Whoever uses this gear">
+                </div>
+                <div class="form-group">
+                    <label for="gearNotes">Gear status:</label>
+                    <select class="form-control" name="gearStatus" id="gearStatus">
+                        <option disabled selected value>Select a status for your gear</option>
+                        <option value="keep">Keep</option>
+                        <option value="sell">Sell</option>
+                        <option value="donate">Donate</option>
+                        <option value="replace">Replace</option>
+                    </select><br>
+                </div>
+                <div class="form-group">
+                    <label for="gearNotes">Gear notes:</label>
+                    <textarea class="form-control" id="gearNotes1" name="gearNotes1" rows="4" cols="30" placeholder="General notes"></textarea>
+                </div>
+                <div class="buttonSpace">
+                    <button class="btn btn-primary" type="button" id="createItem">Enter</button>
+                </div>
+            </form></br>    
+        </div>
+
+        <div id="addNewCategory">
+            <h3>Create New Category</h3>
+            <div class="form-group" id="makeNewCategory">
+                <form>
+                    <input class="form-control" id="newCatName" type="text" placeholder="New category name">
+                </form>
+            </div>
+            <div class="buttonSpace">
+                <button class="btn btn-primary" type="submit" id="newCatNameB">Enter</button>
+            </div>
+        </div>
+
+        <div id="showInventoryDiv">
+            <h3>Show Complete Inventory</h3>
+                <p>Inventory items:</p>
+                <div class="buttonSpace">
+                    <button class="btn btn-primary" onclick="inventoryDisplay()">Display</button>
+                </div>
+                <div id="displayItems7">
+                    <div id="searchDisplay"></div>
+                </div>
+        </div>
+    </main>
+
+</body>
+</html>

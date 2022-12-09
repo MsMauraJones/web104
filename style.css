@@ -1,0 +1,60 @@
+
+body {
+    padding: 2rem;
+    margin: 1rem;
+    
+}
+
+main{
+    max-width:800px;
+    margin:auto;
+    padding-top: 3rem;
+    background-color: rgb(247, 255,247);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 3rem;
+
+}
+
+.indexForm{
+    margin-bottom: 1.5rem;
+}
+
+
+#searchDisplay{
+    padding: 0.5rem
+}
+
+.form-check{
+    padding: 0.25rem
+}
+
+.form-group{
+    padding: 0.5rem
+}
+
+.buttonSpace{
+    margin-bottom: 1rem;
+    margin-left: 10px;
+}
+
+.register{
+    margin-left: 10px;
+}
+
+#makeCategoryList{
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+/* #addNewCategory {
+    padding: 0.8rem;
+} */
+
+#displayItems7{
+    background-color: white;
+    margin: 1rem;
+    border-color: black;
+    border-width: 4px;
+    padding: 0.5rem;
+}
